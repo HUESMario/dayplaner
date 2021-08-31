@@ -1,0 +1,26 @@
+$nav-margin: 5px 0 0 10px;
+
+#nav
+{
+    width:100%;
+    height:50px;
+    background-color: #898989;
+    display: flexbox !important;
+    flex-direction: column;
+}
+
+.nav-point
+{
+    margin: $nav-margin;
+    padding: 2px 5px 5px 5px;
+    color:#12ab12;
+    height:30px;
+    display: inline-flex;
+    background-color: #464646;
+    font-size: 24px;
+}
+#nav:last-child #Start
+{
+    float: right;
+    margin-right: 10px;
+}
