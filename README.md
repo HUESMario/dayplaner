@@ -1,7 +1,7 @@
 # Day Planer
 
 This Project is to Plan my Day
-If you want to use it, you need to upgrade the Pixels for your Screen I guess ( didn't use css in a while )
+If you want to use it, you need to upgrade the Pixels for your Screen I guess ( didn't use css in a while ).
 
 ## To-do
 
@@ -9,7 +9,7 @@ Here You can List all Tasks you need for Today in Program you can type the Path 
 
 ## Projects
 
-Here You can List all Your Projects with all Needed Tasks
+Here You can List all Your Projects with all Needed Tasks.
 
 ## important Links
 

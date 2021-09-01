@@ -1,0 +1,33 @@
+$background-color: #464646;
+
+#start
+{
+    width: calc(100vw - 60px);
+    height:calc(100vh - 4.5vh - 40px);
+    margin:10px;
+    background-color: rebeccapurple;
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+}
+#Greetings
+{
+    color:white;
+    font-size: 32px;
+    width:500px;
+    height:auto;
+    position: absolute;
+    top:40%;
+}
+#Greetings > *
+{
+    margin:0 10px; 
+    vertical-align: middle;
+}
+#tasks
+{
+    width:70%;
+    height: calc( 100vh - 85px );
+    background-color: $background-color;
+    float: right;
+}

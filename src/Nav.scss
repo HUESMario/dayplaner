@@ -1,9 +1,9 @@
 $nav-margin: 5px 0 0 10px;
-
+$background-color: #464646;
 #nav
 {
     width:100%;
-    height:50px;
+    height:4.5vh;
     background-color: #898989;
     display: flexbox !important;
     flex-direction: column;
@@ -16,11 +16,15 @@ $nav-margin: 5px 0 0 10px;
     color:#12ab12;
     height:30px;
     display: inline-flex;
-    background-color: #464646;
+    background-color: $background-color;
     font-size: 24px;
 }
-#nav:last-child #Start
+#nav > #Start
 {
     float: right;
     margin-right: 10px;
+}
+#nav > .active
+{
+    height: 25px;
 }
