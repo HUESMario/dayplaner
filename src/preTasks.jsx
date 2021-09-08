@@ -1,5 +1,14 @@
-import React from "react";
+import { Component } from "react";
+import "./preTasks.scss";
 
-export const PreTasks = (props) => {
-
+export class PreTasks extends Component
+{
+    render()
+    {
+        return (
+            <div id="PreTasks-Site">
+                <p>PreTasks</p>
+            </div>
+        );
+    }
 }

@@ -1,6 +1,12 @@
-import React from "react";
+import { Component } from "react";
+import './importantPrograms.scss';
 
-export const ImpPrograms = (props) =>
+export class ImpPrograms extends Component
 {
-
-} 
+    render()
+    {
+        return (
+            <div id="ImpPrograms-Site"><p>ImpPrograms</p></div>
+        );
+    }
+}

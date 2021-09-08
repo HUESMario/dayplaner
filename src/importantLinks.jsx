@@ -1,5 +1,14 @@
-import React from "react";
+import { Component } from "react";
+import './importantLinks.scss';
 
-export const impLinks = (props) => {
-
+export class ImpLinks extends Component
+{
+    render()
+    {
+        return (
+        <div id="ImpLinks-Site">
+            <p>ImpLinks</p>
+        </div>
+        );
+    }
 }

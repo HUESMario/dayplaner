@@ -1,19 +1,20 @@
 $background-color: #464646;
 
-#start
+#start-Site
 {
-    width: calc(100vw - 60px);
+    width: calc(100vw - 40px);
     height:calc(100vh - 4.5vh - 40px);
     margin:10px;
     background-color: rebeccapurple;
     display: block;
     overflow: hidden;
     padding: 10px;
+    border-radius: 10px;
 }
 #Greetings
 {
     color:white;
-    font-size: 32px;
+    font-size: 38px;
     width:500px;
     height:auto;
     position: absolute;
@@ -30,4 +31,27 @@ $background-color: #464646;
     height: calc( 100vh - 85px );
     background-color: $background-color;
     float: right;
+    border-radius: 4px 10px 10px 4px;
+}
+label
+{
+    color: #ffffff;
+    margin: 2%;
+}
+input
+{
+    margin: 2%;
+}
+#what
+{
+    display: inline;
+    width: 100%;
+}
+#who_takes_part
+{
+    display: inline;
+}
+#when
+{
+    display: inline;
 }

@@ -1,5 +1,14 @@
-import React from "react";
+import { Component } from "react";
+import './ToDo.scss';
 
-export const ToDo = (props) => {
-
+export class ToDo extends Component
+{
+    render()
+    {
+        return (
+            <div id="ToDo-Site">
+                <p>ToDo</p>
+            </div>
+        );
+    }
 }
