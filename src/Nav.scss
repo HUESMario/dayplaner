@@ -1,4 +1,4 @@
-$nav-margin: 5px 0 0 10px;
+$nav-margin: 8px 0 0 10px;
 $background-color: #464646;
 
 #nav
@@ -27,7 +27,7 @@ $background-color: #464646;
 
 .nav-point:not(.active):hover
 {
-    margin-top: 3px;
+    margin-top: 6px;
 }
 
 #nav > #Start-nav
@@ -39,6 +39,6 @@ $background-color: #464646;
 .active
 {
     color: #ffd700;
-    margin-top: 1px !important;
+    margin-top: 4px !important;
     border-bottom: 1px solid #ffd700;
 }

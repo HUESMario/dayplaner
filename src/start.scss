@@ -10,6 +10,7 @@ $background-color: #464646;
     overflow: hidden;
     padding: 10px;
     border-radius: 10px;
+    color: #ffffff;
 }
 #Greetings
 {
@@ -36,22 +37,48 @@ $background-color: #464646;
 label
 {
     color: #ffffff;
-    margin: 2%;
+    margin: 7%;
 }
 input
 {
-    margin: 2%;
+    margin: 1%;
 }
-#what
-{
-    display: inline;
-    width: 100%;
-}
-#who_takes_part
+#collect-data > div
 {
     display: inline;
 }
-#when
+#Which_Program
 {
-    display: inline;
+    width:595px;
+}
+#send_Task
+{
+    border: 0;
+    border-radius: 90px;
+    background-color: #898989;
+    color: #ffd700;
+    font-size: 18pt;
+}
+#send_Task:hover
+{
+    cursor: pointer;
+}
+#importance
+{
+    margin:1.6%
+}
+table
+{
+    width: 92%;
+    margin:0 4%;
+    border: 1px;
+    background-color: #898989;
+}
+th, td
+{
+    border: 1px solid #464646;
+}
+.important
+{
+    background-color: #12ab12;
 }

@@ -18,11 +18,8 @@ return (
 )
 }
 
-export const Start = (props) => {
+const CollectData = () => {
     return (
-    <div id="start-Site">
-        <Greeting/>
-        <div id="tasks">
             <div id="collect-data">
                 <div id="what">
                     <label>What: 
@@ -34,6 +31,7 @@ export const Start = (props) => {
                         <input id="participates-txt" type="text" placeholder="Who takes Part"></input>
                     </label>
                 </div>
+                <br/>
                 <div id="when">
                     <label>When: 
                         <input id="When-txt" type="text" placeholder="When?"></input>
@@ -44,13 +42,46 @@ export const Start = (props) => {
                         <input id="importance-txt" type="text" placeholder="1 ( very important ) 2 ( important ) 3 ( unimportant )"></input>
                     </label>
                 </div>
-                <div id="when">
+                <button id="send_Task">add Task</button>
+                <br/>
+                <div id="which-program">
                     <label>Which Program: 
-                        <input id="Which Program" type="text" placeholder="Which Program?"></input>
+                        <input id="Which_Program" type="text" placeholder="Which Program?"></input>
                     </label>
                 </div>
-                
-            </div>
+        </div>
+    )
+}
+
+const ShowData = () => {
+    return (
+        <table>
+        <caption>Your current Tasks:</caption>
+            <tr>
+                <th>id</th>
+                <th>What</th>
+                <th rowSpan="1">When</th>
+                <th>Who takes Part</th>
+                <th>Program</th>
+            </tr>
+            <tr className="important">
+                <td>1</td>
+                <td>Design Day Planer</td>
+                <td>30.08.2021 02:44</td>
+                <td>Just you</td>
+                <td><button>start Program</button></td>
+            </tr>
+        </table>
+    )
+}
+
+export const Start = (props) => {
+    return (
+    <div id="start-Site">
+        <Greeting/>
+        <div id="tasks">
+            <CollectData/>
+            <ShowData/>
         </div>
     </div>
     )
