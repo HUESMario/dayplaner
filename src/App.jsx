@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.sass';
 import { Nav } from './Nav';
 import { Main } from "./main";
 import { Component } from 'react';

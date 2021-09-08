@@ -1,5 +1,5 @@
 import { Component } from "react";
-import './ToDo.scss';
+import './ToDo.sass';
 
 export class ToDo extends Component
 {

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import './importantPrograms.scss';
+import './importantPrograms.sass';
 
 export class ImpPrograms extends Component
 {

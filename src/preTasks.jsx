@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "./preTasks.scss";
+import "./preTasks.sass";
 
 export class PreTasks extends Component
 {

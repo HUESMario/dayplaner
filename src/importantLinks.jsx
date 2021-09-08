@@ -1,5 +1,5 @@
 import { Component } from "react";
-import './importantLinks.scss';
+import './importantLinks.sass';
 
 export class ImpLinks extends Component
 {

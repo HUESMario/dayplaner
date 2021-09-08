@@ -1,5 +1,5 @@
 import { Component } from "react";
-import './Projects.scss';
+import './Projects.sass';
 
 export class Projects extends Component
 {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./start.scss";
+import "./start.sass";
 
 const Greeting = () => {
     const hours = new Date().getHours();
@@ -20,7 +20,8 @@ return (
 
 const CollectData = () => {
     return (
-            <div id="collect-data">
+        <div id="collect-data">
+            <form>
                 <div id="what">
                     <label>What: 
                         <input id="What-txt" type="text" placeholder="What"></input>
@@ -39,7 +40,7 @@ const CollectData = () => {
                 </div>
                 <div id="importance">
                     <label>Importance: 
-                        <input id="importance-txt" type="text" placeholder="1 ( very important ) 2 ( important ) 3 ( unimportant )"></input>
+                        <input id="importance-txt" type="text" placeholder="1, 2 or 3"></input>
                     </label>
                 </div>
                 <button id="send_Task">add Task</button>
@@ -49,6 +50,7 @@ const CollectData = () => {
                         <input id="Which_Program" type="text" placeholder="Which Program?"></input>
                     </label>
                 </div>
+            </form>
         </div>
     )
 }
@@ -56,21 +58,32 @@ const CollectData = () => {
 const ShowData = () => {
     return (
         <table>
-        <caption>Your current Tasks:</caption>
-            <tr>
-                <th>id</th>
-                <th>What</th>
-                <th rowSpan="1">When</th>
-                <th>Who takes Part</th>
-                <th>Program</th>
-            </tr>
-            <tr className="important">
-                <td>1</td>
-                <td>Design Day Planer</td>
-                <td>30.08.2021 02:44</td>
-                <td>Just you</td>
-                <td><button>start Program</button></td>
-            </tr>
+        <colgroup>
+        <col style={{width:"2%", height:"50px"}}></col>
+        <col style={{width:"53%", height:"50px"}}></col>
+        <col style={{width:"7%", height:"50px"}}></col>
+        <col style={{width:"30%", height:"50px"}}></col>
+        <col style={{width:"8%", height:"50px"}}></col>
+        </colgroup>
+            <caption>Your current Tasks:</caption>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>What</th>
+                    <th rowSpan="1">When</th>
+                    <th>Who takes Part</th>
+                    <th>Program</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr className="important">
+                    <td className="id">1</td>
+                    <td className="What">Design Day Planer</td>
+                    <td className="When">30.08.2021 02:44</td>
+                    <td className="Who">Just you</td>
+                    <td className="Program"><button>start Program</button></td>
+                </tr>
+            </tbody>
         </table>
     )
 }
