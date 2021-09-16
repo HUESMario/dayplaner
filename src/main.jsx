@@ -8,20 +8,12 @@ import { PreTasks } from "./preTasks";
 
 export class Main extends React.Component
 {
-    constructor(props)
-    {
-        super(props);
-        this.state = {activeField: "start"}
-    }
-    
-    
-
     render()
     {
         switch(this.props.activePage)
         {
             case "start":
-                return <Start/>;
+                return <Start todoList={this.props.todoList}/>;
             case "to-do":
                 return <ToDo/>;
             case "Projects":

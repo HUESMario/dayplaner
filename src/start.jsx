@@ -76,13 +76,7 @@ const ShowData = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr className="important">
-                    <td className="id">1</td>
-                    <td className="What">Design Day Planer</td>
-                    <td className="When">30.08.2021 02:44</td>
-                    <td className="Who">Just you</td>
-                    <td className="Program"><button>start Program</button></td>
-                </tr>
+                
             </tbody>
         </table>
     )
