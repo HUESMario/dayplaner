@@ -10,9 +10,10 @@ class App extends Component
     super();
     this.state = {
       activePage: "start",
-      To_Do: ""};
+      To_Do: "<tr class='important'><td>1</td><td>Learn React</td><td>31.1.2021</td><td>Just You</td><td><button>start Program</button></td></tr>"
+    };
     this.changeNav = this.changeNav.bind(this);
-    this.addToDo =this.addToDo.bind(this);
+    this.addToDo = this.addToDo.bind(this);
   }
 
   changeNav = (changeSite) => {
@@ -24,12 +25,51 @@ class App extends Component
 
   addToDo = (todo) => {
 
-    let newToDo = this.state.To_Do;
+    let newToDo
+    const fillItem = () => {
+      if(this.state.To_Do)
+      {
+        newToDo = this.state.To_Do;
+      }
+      else if(!this.state.To_Do)
+      {
+        newToDo = "";
+      }
 
-    if(todo)
-    {
-      
+      if(todo)
+      {
+        newToDo += `<tr class=${todo.importance === 1 ? 'important' : todo.importance === 2 ? 'less_important' : 'unimportant'}>
+        <td>1</td>`;
+      }
+      newToDo += `<td>${todo.what}</td>`
+      if(todo.when)
+      {
+        newToDo += `<td>${todo.when}</td>`
+      }
+      else if(!todo.when)
+      {
+        const date = new Date();
+        newToDo += `<td>${date.toLocaleDateString()} ${date.getHours() + 1}:${date.getMinutes() < 10 ? "0"+date.getMinutes() : date.getMinutes()}</td>`
+      }
+      if(todo.participent)
+      {
+        newToDo += `<td>You, ${todo.participent}</td>`
+      }
+      else if(!todo.participent)
+      {
+        newToDo += `<td>Just you</td>`
+      }
+      if(todo.program)
+      {
+        newToDo += `<td><button>start Program</button></td>`
+      }
+      else if(!todo.program)
+      {
+        newToDo += `<td></td>`
+      }
+      newToDo += `</tr>`;
     }
+    fillItem();
 
     this.setState({
       activePage:this.state.activePage,
@@ -46,6 +86,5 @@ class App extends Component
     );
   }
 }
-
 
 export default App;

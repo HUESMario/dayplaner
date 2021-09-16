@@ -10,52 +10,64 @@ const Greeting = () => {
     //from 18 P.M. to 6 A.M. Evening
     //earlier then 6 A.M. Evening
     hours < 6 ? greeting = "Good Evening" : hours > 18 ? greeting = "Good Evening" : hours > 12 ? greeting = "Welcome" : hours > 6 ? greeting = "Good Morning" : greeting = "Welcome";  
-return (
-<div id="Greetings">
-    <p>{greeting}, {Name}</p>
-    <h2>Let's get to Work.</h2>
-</div>
-)
-}
-
-const CollectData = () => {
     return (
-        <div id="collect-data">
-            <form>
-                <div id="what">
-                    <label>What: 
-                        <input id="What-txt" type="text" placeholder="What"></input>
-                    </label>
-                </div>
-                <div id="who_takes_part">
-                    <label>Who takes Part: 
-                        <input id="participates-txt" type="text" placeholder="Who takes Part"></input>
-                    </label>
-                </div>
-                <br/>
-                <div id="when">
-                    <label>When: 
-                        <input id="When-txt" type="text" placeholder="When?"></input>
-                    </label>
-                </div>
-                <div id="importance">
-                    <label>Importance: 
-                        <input id="importance-txt" type="text" placeholder="1, 2 or 3"></input>
-                    </label>
-                </div>
-                <button id="send_Task">add Task</button>
-                <br/>
-                <div id="which-program">
-                    <label>Which Program: 
-                        <input id="Which_Program" type="text" placeholder="Which Program?"></input>
-                    </label>
-                </div>
-            </form>
+        <div id="Greetings">
+            <p>{greeting}, {Name}</p>
+            <h2>Let's get to Work.</h2>
         </div>
-    )
+    ) 
 }
 
-const ShowData = () => {
+class CollectData extends React.Component {
+    
+
+    inputValues = {};
+    processData = e => {
+        e.preventDefault();
+        let object = {};
+        console.log(this.props);
+        object = this.inputValues;
+        this.props.addItem(object);
+    }
+    render() {
+        return (
+            <div id="collect-data">
+                <form>
+                    <div id="what">
+                        <label>What: 
+                            <input id="What-txt" type="text" placeholder="What" onChange={e => this.inputValues.what = e.target.value}></input>
+                        </label>
+                    </div>
+                    <div id="who_takes_part">
+                        <label>Who takes Part: 
+                            <input id="participates-txt" type="text" placeholder="Who takes Part" onChange={e => this.inputValues.who = e.target.value}></input>
+                        </label>
+                    </div>
+                    <br/>
+                    <div id="when">
+                        <label>When: 
+                            <input id="When-txt" type="text" placeholder="When?" onChange={e => this.inputValues.when = e.target.value} value={this.inputValues.when}></input>
+                        </label>
+                    </div>
+                    <div id="importance">
+                        <label>Importance: 
+                            <input id="importance-txt" type="text" placeholder="1, 2 or 3" onChange={e => this.inputValues.importance = parseInt(e.target.value)} value={this.inputValues.importance}></input>
+                        </label>
+                    </div>
+                    <button id="send_Task" onClick={this.processData}>add Task</button>
+                    <br/>
+                    <div id="which-program">
+                        <label>Which Program: 
+                            <input id="Which_Program" type="text" placeholder="Which Program?" onChange={e => this.inputValues.program = e.target.value} value={this.inputValues.program}></input>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        )
+    }
+}
+
+const ShowData = (props) => {
     return (
         <table>
         <colgroup>
@@ -70,12 +82,12 @@ const ShowData = () => {
                 <tr>
                     <th>id</th>
                     <th>What</th>
-                    <th rowSpan="1">When</th>
+                    <th>When</th>
                     <th>Who takes Part</th>
                     <th>Program</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody dangerouslySetInnerHTML={{ __html: props.todoList }}>
                 
             </tbody>
         </table>
@@ -87,8 +99,8 @@ export const Start = (props) => {
     <div id="start-Site">
         <Greeting/>
         <div id="tasks">
-            <CollectData/>
-            <ShowData/>
+            <CollectData addItem={props.addToDo}/>
+            <ShowData todoList={props.todoList}/>
         </div>
     </div>
     )

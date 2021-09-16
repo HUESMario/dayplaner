@@ -13,7 +13,7 @@ export class Main extends React.Component
         switch(this.props.activePage)
         {
             case "start":
-                return <Start todoList={this.props.todoList}/>;
+                return <Start todoList={this.props.todoList} addToDo={this.props.addToDo}/>;
             case "to-do":
                 return <ToDo/>;
             case "Projects":
