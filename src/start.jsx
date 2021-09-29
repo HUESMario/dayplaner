@@ -18,53 +18,49 @@ const Greeting = () => {
     ) 
 }
 
-class CollectData extends React.Component {
-    
-
-    inputValues = {};
-    processData = e => {
+const CollectData = (props) => {
+    let inputValues = {};
+    const processData = e => {
         e.preventDefault();
         let object = {};
-        console.log(this.props);
-        object = this.inputValues;
-        this.props.addItem(object);
+        object = inputValues;
+        props.addItem(object);
     }
-    render() {
-        return (
-            <div id="collect-data">
-                <form>
-                    <div id="what">
-                        <label>What: 
-                            <input id="What-txt" type="text" placeholder="What" onChange={e => this.inputValues.what = e.target.value}></input>
-                        </label>
-                    </div>
-                    <div id="who_takes_part">
-                        <label>Who takes Part: 
-                            <input id="participates-txt" type="text" placeholder="Who takes Part" onChange={e => this.inputValues.who = e.target.value}></input>
-                        </label>
-                    </div>
-                    <br/>
-                    <div id="when">
-                        <label>When: 
-                            <input id="When-txt" type="text" placeholder="When?" onChange={e => this.inputValues.when = e.target.value} value={this.inputValues.when}></input>
-                        </label>
-                    </div>
-                    <div id="importance">
-                        <label>Importance: 
-                            <input id="importance-txt" type="text" placeholder="1, 2 or 3" onChange={e => this.inputValues.importance = parseInt(e.target.value)} value={this.inputValues.importance}></input>
-                        </label>
-                    </div>
-                    <button id="send_Task" onClick={this.processData}>add Task</button>
-                    <br/>
-                    <div id="which-program">
-                        <label>Which Program: 
-                            <input id="Which_Program" type="text" placeholder="Which Program?" onChange={e => this.inputValues.program = e.target.value} value={this.inputValues.program}></input>
-                        </label>
-                    </div>
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div id="collect-data">
+            <form>
+                <div id="what">
+                    <label>What: 
+                        <input id="What-txt" type="text" placeholder="What" onChange={e => inputValues.what = e.target.value}></input>
+                    </label>
+                </div>
+                <div id="who_takes_part">
+                    <label>Who takes Part: 
+                        <input id="participates-txt" type="text" placeholder="Who takes Part" onChange={e => inputValues.who = e.target.value}></input>
+                    </label>
+                </div>
+                <br/>
+                <div id="when">
+                    <label>When: 
+                        <input id="When-txt" type="text" placeholder="When?" onChange={e => inputValues.when = e.target.value} value={inputValues.when}></input>
+                    </label>
+                </div>
+                <div id="importance">
+                    <label>Importance: 
+                        <input id="importance-txt" type="text" placeholder="1, 2 or 3" onChange={e => inputValues.importance = parseInt(e.target.value)} value={inputValues.importance}></input>
+                    </label>
+                </div>
+                <button id="send_Task" onClick={processData}>add Task</button>
+                <br/>
+                <div id="which-program">
+                    <label>Which Program: 
+                        <input id="Which_Program" type="text" placeholder="Which Program?" onChange={e => inputValues.program = e.target.value} value={inputValues.program}></input>
+                    </label>
+                </div>
+            </form>
+        </div>
+    )
+    
 }
 
 const ShowData = (props) => {

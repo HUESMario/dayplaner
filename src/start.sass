@@ -18,11 +18,18 @@ $background-color: #464646
     height:auto
     position: absolute
     top:40%
+    cursor: default
+
+#Greetings > 
+    *::selection
+        background-color: rebeccapurple
+        color: #ffffff
 
 #Greetings > 
     *
         margin:0 10px 
         vertical-align: middle
+        text-shadow: 4px -4px 4px black
 
 #tasks
     width:70%
@@ -30,6 +37,7 @@ $background-color: #464646
     background-color: $background-color
     float: right
     border-radius: 4px 10px 10px 4px
+    box-shadow: 10px -5px 5px black
 
 label
     color: #ffffff

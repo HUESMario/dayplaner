@@ -10,7 +10,7 @@ class App extends Component
     super();
     this.state = {
       activePage: "start",
-      To_Do: "<tr class='important'><td>1</td><td>Learn React</td><td>31.1.2021</td><td>Just You</td><td><button>start Program</button></td></tr>"
+      To_Do: "<tr class='important'><td>1</td><td>Learn React</td><td>31.1.2021 14:15</td><td>Just You</td><td><button>start Program</button></td></tr>"
     };
     this.changeNav = this.changeNav.bind(this);
     this.addToDo = this.addToDo.bind(this);
