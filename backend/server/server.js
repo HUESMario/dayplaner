@@ -9,11 +9,11 @@ const server = http.createServer();
 server.on('request', (req, res) => {
     let params = new URL(req.url, `http://${req.headers.host}`);
     
-    if(params.searchParams.entries.length === 0)
+    if(!params.searchParams.has('g'))
     {
         res.writeHead(200, {"content-type":"text/html"});
         res.write('<p>nothing to see Here.</p>');
-        res.end('');
+        res.end();
     }
     else 
     {
@@ -21,22 +21,19 @@ server.on('request', (req, res) => {
         const file = `../userData/${params.searchParams.get('f') || params.searchParams.get('name')}.json`;
         const fileExists = fs.existsSync(file);
 
-        
-
         if(doesGet)
         {
             
             if(fileExists)
             {
-                res.writeHead('200', {"content-Type": "Application/JSON"})
                 const data = fs.readFileSync(file, 'utf-8');
+                res.writeHead(200, {"content-Type": "Application/JSON"})
                 res.write(data);
-                console.log('sent File');
             }
             else if(!fileExists)
             {
-                res.writeHead('404', {"content-type": "text/plain"});
-                console.log("couldn't find File");
+                res.writeHead(404, {"content-type": "plain/text"});
+                res.write("couldn't find File")
             }
         }
         else if(!doesGet)
@@ -46,7 +43,6 @@ server.on('request', (req, res) => {
                 age: params.searchParams.get('age'),
                 living: params.searchParams.get('living'),
             }
-            console.log(newProfile);
             let response = "";
             if(newProfile.name && newProfile.age && newProfile.living)
             {
@@ -65,4 +61,4 @@ server.on('request', (req, res) => {
 })
 
 
-server.listen(3000);
+server.listen(8000);

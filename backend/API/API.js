@@ -1,35 +1,27 @@
-const { link } = require('fs');
 const http = require('http')
+const superagent = require('superagent');
 
 class api {
+    //public:
     api(link){
         this.#link = link;
     }
+    /**
+     * get Profile of {name} User 
+     * @param {string} name Name of User we want to get Data from.
+     */
+    getProfile(name) {
+        return new Promise(function(resolve, reject)
+        {
+            let url = new URL('http://localhost:8000/'); 
 
-    #link;
-}
-
-function getProfile(name) {
-    let url = new URL('http://localhost:8000/'); 
-
-    url.searchParams.set('f', name);
-    url.searchParams.set('g', true);
-    http.get(url.href, async (res) => {
-
-        let chunk = "";
-        res.on('data', (buffer) => {
-            chunk += buffer;
-        });
-
-        await res.on('end', () => {
-            if(res.statusCode !== 404)
-            {   
-                console.log(JSON.parse(chunk));
-            }
+            url.searchParams.set('f', name);
+            url.searchParams.set('g', true);
+            superagent.get(url.href).then((object) => {resolve(JSON.parse(object.text))}).catch((e) => {reject(e)})
         })
-    })
-}
-function setProfile(name, age, living) {
+    }
+
+    setProfile(name, age, living) {
     let url = new URL('http://localhost:8000/'); 
 
     url.searchParams.set('name', name);
@@ -46,6 +38,15 @@ function setProfile(name, age, living) {
             console.log(response.join(''));
         })
     })
+    }
+
+    //private:
+    #link;
 }
-getProfile('Mario')
-setProfile('Denis', 25, 'Herne, Germany')
+
+const Api = new api('http://localhost:8000/')
+Api.setProfile('Denis', 25, 'Herne, Germany')
+const test = async () => {
+    console.log(await Api.getProfile('Denis'));
+}
+test();
